@@ -1,0 +1,23 @@
+.ProductosContainer{
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    justify-content: space-around;
+
+}
+.imgProductoItem{
+width: 120px;
+height:120px ;
+}
+
+.DescripcionDeProducto{
+    overflow:hidden;
+    white-space:normal;
+    text-overflow: ellipsis;
+height: 200px;
+width: 200px;
+}
+
+.hiddenTxtDescripcion{
+    color:black
+}

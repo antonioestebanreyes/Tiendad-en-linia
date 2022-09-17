@@ -1,0 +1,52 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.containerForm,.containerFormLogin{
+    width: 800px;
+    height: 500px;
+    border: solid 2px black;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    justify-content: space-around;
+    align-content: center;
+    background-color: rgb(248, 236, 126);
+    color: hsla(200,0%,0%,.7);
+}
+#Formulario,#FormularioLogin{
+   display: flex;
+   flex-direction: column;
+   flex-wrap: wrap;
+   justify-content: center;
+ align-content: center;
+    
+
+}
+#Formulario input ,#sublime,.selectGenero,#FormularioLogin input,#loginBtn{
+    
+    width: 300px;
+    height: 23px;
+    margin: 3px;
+    border-radius: 8px;
+    padding: 22px;
+    
+
+}
+#sublime{
+    background-color: aquamarine;
+}
+#sublime:hover{
+   opacity: 0.5;
+    cursor: pointer;
+    background-color: blueviolet;
+    color: white;
+}
+
+#loginBtn:hover{
+    opacity: 0.5;
+    cursor: pointer;
+    background-color: blueviolet;
+    color: white
+}
