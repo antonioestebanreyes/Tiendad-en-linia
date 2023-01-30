@@ -10,37 +10,37 @@ function  Nanvar() {
   
 
  <NavLink
-       activeClassName="active"
+       //activeClassName="active"
         to="/"
       >
         Home
       </NavLink>
       <NavLink
-       activeClassName="active"
+      // activeClassName="active"
         to="/Formulario"
       >
       <i className="bi bi-person-fill"></i>
       </NavLink>
       <NavLink
-       activeClassName="active"
+       //activeClassName="active"
         to="/Login"
       >
     Login
       </NavLink>
       <NavLink
-       activeClassName="active"
+    //   activeClassName="active"
         to="/"
       >
     Crea una cuenta 
       </NavLink>
       <NavLink
-       activeClassName="active"
+     //  activeClassName="active"
         to="/"
       >
    Ingresa
       </NavLink>
       <NavLink
-       activeClassName="active"
+       //activeClassName="active"
         to="/"
       >
   Mis compras

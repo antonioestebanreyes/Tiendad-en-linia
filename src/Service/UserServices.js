@@ -1,5 +1,5 @@
 import axios from 'axios'
-const BASE_URL = 'https://ecomerce-master.herokuapp.com/api/v1'
+const BASE_URL = 'http://localhost:4000/inmueble'
 
 const token = window.sessionStorage.getItem('token') || ''
 const config = {
@@ -10,4 +10,4 @@ const RegisterUser = (data) => axios.post(`${BASE_URL}/signup`, data)
 const LoginUser = (data) => axios.post(`${BASE_URL}/login`, data)
 const getSingleUser = (id) => axios.get(`${BASE_URL}/user/${id}`, config)
 
-export { RegisterUser, LoginUser, getSingleUser }
+export { RegisterUser, LoginUser, getSingleUser } 

@@ -1,11 +1,15 @@
 import '../style/PainFilter.css'
 import {DataContext} from './Context/Contex'
 import {useContext} from 'react'
+import { useEffect } from 'react';
 
 
 function PainTodos() {
  const DataDeProducto = useContext(DataContext);
- console.log(DataDeProducto);
+ useEffect(()=>{
+
+   console.log("este es el producto",DataDeProducto);
+ },[])
 
 return(
   <div>

@@ -2,7 +2,7 @@ import axios from 'axios'
 import { useState,useEffect,createContext,} from 'react'
 import Api from '../../Service/Api/Api'
 import PainTodos from '../PainTodos'
-import {  Routes, Route } from 'react-router-dom'
+
 
 
 
@@ -11,20 +11,21 @@ function SongProvider () {
   const [Data, setData] = useState([]);
   useEffect(()=>{
   const item=async ()=>{
-  const url='https://ecomerce-master.herokuapp.com/api/v1/item'
+  const url='https://api.escuelajs.co/api/v1/products'
   const  resul=await axios.get(url)
   let Datas=resul.data
-  
-  
   setData(Datas)
+  console.log('este la la data de product' ,Datas[0].title
+  );
+  
   
   
   }
   item()
   
-  console.log(Data);
-  },[])
   
+  },[])
+  console.log('ok',Data);
   
   return (
     <>
@@ -32,6 +33,7 @@ function SongProvider () {
    
     <DataContext.Provider value={Data}>
       <Api/>
+      <PainTodos/>
     </DataContext.Provider>
     
     </>

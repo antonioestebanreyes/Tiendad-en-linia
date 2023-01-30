@@ -1,4 +1,4 @@
-import React from 'react'
+ import React from 'react'
 import   '../style/estilosForm.css'
 import useForm from '../hooks/UseForm'
 import { RegisterUser } from '../Service/UserServices'
@@ -51,4 +51,4 @@ function Register() {
   )
 }
 
-export default Register
+export default Register 
