@@ -39,11 +39,17 @@ console.log( inputEl.current.value);
   return (
     <>
       <form >
-    { <input ref={inputEl}  className='search' type='search' placeholder='Buscar......' onChange={SeachActualizar} /> }
-   <button className='btnEnviar' type="submit"  onClick={filter} ><Link to="/"><i className="bi bi-search SearchIcom " ></i> </Link> </button>
+    {<input className="form-control"   ref={inputEl} type="search" defaultValue="Readonly input here..." placeholder='Buscar......' aria-label="readonly input example" read OnlyonChange={SeachActualizar} />
+}
+   <button className='btnEnviar' type="submit"  onClick={filter} ><Link to="/"><i className="bi bi-search SearchIcom  search" ></i> </Link> </button>
    </form>
         <ul>
-    {Data.length===0 && <img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif?20151024034921" alt="Carga" /> }
+    {Data.length===0 &&  <div className="d-flex justify-content-center">
+  <div className="spinner-border" role="status">
+    <span className="visually-hidden">Loading...</span>
+  </div>
+</div>
+ }
     { 
       Data.map((prodcto,i) => {
         console.log("super",prodcto.title);
@@ -52,15 +58,45 @@ console.log( inputEl.current.value);
     return(
 
        <div className='ProductosContainer'>
-         <div key1={i} className='ProductoContainerList'> 
-           Producto:{ prodcto.title}
-         </div>
-         <div key2={i}><i className="bi bi-heart"></i></div>
-         <img src={prodcto.images[0]} alt="No cargo la imagen" className='imgProductoItem' key={i}/>
-         <div><i className="bi bi-handbag"></i></div>
-         <div key3={i} className='DescripcionDeProducto'><p>Descripcion:{prodcto.description} </p><Link to='./' className='hiddenTxtDescripcion'>......ver mas</Link></div>
-        
+         
+        <div className="row">
+  <div className="col-sm-6 mb-3 mb-sm-0">
+    <div className="card">
+      <div className="card-body">
+        <h5 className="card-title" key={i}>Producto:{ prodcto.title}</h5>
+        <div className='contenedorImg'>    <img src={prodcto.images[0]} alt="No cargo la imagen" className="img-thumbnail rounded mx-auto d-block "  key={i}/></div>
+        <div className="w-100 h-50 m-t-3"> <a href="#" className="btn btn-primary"><div key3={i} ><p>Descripcion:{prodcto.description} </p><Link to='./' className='hiddenTxtDescripcion'>......ver mas</Link></div>    </a> </div>  
+      </div>
+    </div>
+  </div>
+  <div className="col-sm-6">
+    <div className="card">
+      <div className="card-body">
+      <h5 className="card-title" key={i}>Producto:{ prodcto.title}</h5>
+      <div className='contenedorImg'> <img src={prodcto.images[0]} alt="No cargo la imagen"className="img-thumbnail rounded mx-auto d-block " key={i}/> </div>        
+      <div className="w-100 h-50 m-t-3"> <a href="#" className="btn btn-primary"><div key3={i} ><p>Descripcion:{prodcto.description} </p><Link to='./' className='hiddenTxtDescripcion'>......ver mas</Link></div>    </a>  
+</div> 
+
+
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
        </div>
+
+
+
+
+
+
+
+
     )
      
    
