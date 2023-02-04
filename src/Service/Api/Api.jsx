@@ -9,15 +9,21 @@ import { Link } from 'react-router-dom';
  function  Api  () {
   const Datas = useContext(DataContext );
   const [Data,SetData]=useState(Datas)
+
+
 const x= Datas[0]
  console.log(Data);
+ Data.forEach(titles => {
+  console.log(titles.title);
+
+ });
    const inputEl = useRef('');
   inputEl.current.value
   const filter = (event) => {
     inputEl.current.value
     event.preventDefault()
-    if (inputEl.current.value==="") {
-      SetData(Datas)
+    if (inputEl.current.value===" " ) {
+      console.log("ok");
     }
     console.log( inputEl.current.value);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
     const Productos=Datas.filter(prodcto=>prodcto.title==inputEl.current.value )
@@ -28,7 +34,7 @@ const x= Datas[0]
 console.log( inputEl.current.value);
  const SeachActualizar=()=>{
   if (inputEl.current.value==="") {
-    setdata(Datas)
+   Datas
 
     console.log("regreso al estado anteior ");
    
@@ -39,9 +45,11 @@ console.log( inputEl.current.value);
   return (
     <>
       <form >
-    {<input className="form-control"   ref={inputEl} type="search" defaultValue="Readonly input here..." placeholder='Buscar......' aria-label="readonly input example" read OnlyonChange={SeachActualizar} />
-}
-   <button className='btnEnviar' type="submit"  onClick={filter} ><Link to="/"><i className="bi bi-search SearchIcom  search" ></i> </Link> </button>
+    {<div className='w-75 '><input className="form-control col-10"   ref={inputEl} type="search"  placeholder='Buscar......' aria-label="readonly input example" read OnlyonChange={SeachActualizar} />
+    
+    </div>
+}<button className='btnEnviar col-2' type="submit"  onClick={filter} ><Link to="/"><i className="bi bi-search SearchIcom  search" ></i> </Link> </button>
+    
    </form>
         <ul>
     {Data.length===0 &&  <div className="d-flex justify-content-center">
