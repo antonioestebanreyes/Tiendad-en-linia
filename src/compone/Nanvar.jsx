@@ -48,7 +48,9 @@ function  Nanvar() {
   Mis compras
       </NavLink>
        
-       
+       <NavLink to="/dashbord">
+        Dashbord
+       </NavLink>
 
  </nav>
  <div className='mainCarucel'>

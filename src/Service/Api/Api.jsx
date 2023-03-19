@@ -2,7 +2,7 @@ import {useContext,useRef,useState} from 'react'
 import {DataContext} from '../../compone/Context/Contex'
 import '../../style/Api.css'
 import { Link } from 'react-router-dom';
-import CarOne from '../../compone/CarOne';
+
 
 
 
@@ -99,7 +99,7 @@ const productoPorTitulo=prodcto.title
 </div>
 
 
-<CarOne Tituto={Cart} />
+
 
        </div>
 
