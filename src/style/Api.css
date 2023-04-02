@@ -27,7 +27,9 @@ width: 200px;
     border: solid 2px black;
     background: gray;
 }
-.contenedorImg{
-width: 200px;
-height: 100px;
+.Img{   
+cursor: pointer;
+}
+.ContenedorImg:hover{
+box-shadow: 3px 4px 8px rgb(235, 228, 228);
 }

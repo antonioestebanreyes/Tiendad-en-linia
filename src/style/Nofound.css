@@ -1,0 +1,26 @@
+*{
+    margin:0px;
+    padding: 0px;
+    
+}
+
+.ContenedorNoFound{
+    background:rgb(150, 138, 138);
+    padding:12px;
+    border-radius: 12px;
+    margin:auto;
+    background-size:cover;
+    text-align: center;
+    box-shadow: 13px 23px 12px black;
+    text-transform: capitalize;
+    font-size: larger;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: lighter;
+    
+}
+.ContenedorNoFound:hover{
+    height: 100%;
+    width: 100%;
+    background: red;
+    transition: background 4s 
+}

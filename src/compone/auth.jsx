@@ -1,28 +1,45 @@
-import { createContext, useState } from "react";
-export const Authcontext=createContext()
+import jwt_decode from 'jwt-decode'
+import Dasbhor from "../pages/dashbord.jsx"
+import { createContext ,useState,useEffect} from 'react'
+export const AuthContext = createContext()
 
+export function AuthProvider (props) {
+  const [isAuth, setIsAuth] = useState(false)
+  const [user, setUser] = useState(null) // Info del usuario descrifrado
 
-export function authProvider() {
+  const loginUser = (token) => {
+    window.sessionStorage.setItem('token', token)
+    const decoded = jwt_decode(token) // Decodifico el JWT y lo guardo en un objeto de JS
+    setUser(decoded)
+    setIsAuth(true)
+  }
 
-    const [isAuth,setIsAuth]=useState(false)
- const loginUser=(token)=>{
-    sessionStorage.setItem("user",token)
- }
- const logout=()=>{
-    sessionStorage.removeItem("token");
+  const logout = () => {
+    window.sessionStorage.removeItem('token')
     setIsAuth(false)
- }
- const values={
+  }
+
+  useEffect(() => {
+    const token = window.sessionStorage.getItem('token')
+
+    if (token) {
+      setIsAuth(true)
+      const decoded = jwt_decode(token) // Decodifico el JWT y lo guardo en un objeto de JS
+      setUser(decoded)
+    }
+  }, [])
+
+  const values = {
     isAuth,
     loginUser,
-    logout
- }
-    return (
-    <Authcontext.Provider value={values}>
-    
-    </Authcontext.Provider>
-    
-    
+    logout,
+    user
+  }
+
+  return (
+    <AuthContext.Provider value={values}>
+    <Dasbhor/>
+    </AuthContext.Provider>
   )
 }
-
+export default AuthProvider

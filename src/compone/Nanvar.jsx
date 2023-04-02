@@ -3,12 +3,13 @@ import '../style/Nanvar.css'
 import '../style/Api.css'
 import 'bootstrap'
 import { NavLink} from "react-router-dom";
+import NanvarCategoria from './NanvarCategoria';
 function  Nanvar() {
   return (
-    <div className='container'>
+    <div className='container-fluid'>
       <nav className='NavContainer'>
       <h4 className='TituloIcomer'>She'e</h4>
-     
+     <NanvarCategoria/>
   
 
  <NavLink
@@ -29,18 +30,8 @@ function  Nanvar() {
       >
     Login
       </NavLink>
-      <NavLink
-    //   activeClassName="active"
-        to="/"
-      >
-    Crea una cuenta 
-      </NavLink>
-      <NavLink
-     //  activeClassName="active"
-        to="/"
-      >
-   Ingresa
-      </NavLink>
+     
+    
       <NavLink
        //activeClassName="active"
         to="/"

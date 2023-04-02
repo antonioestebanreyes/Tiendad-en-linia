@@ -1,5 +1,6 @@
 import React from 'react'
 import Conte from './Context/Contex'
+import  Auth  from './auth'
 
 function Home() {
   return (
@@ -7,6 +8,7 @@ function Home() {
 
   
    <Conte/>
+   <Auth/>
  
     </>
   )
